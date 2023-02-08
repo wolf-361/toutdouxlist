@@ -8,14 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+  isDarkTheme = document.body.classList.contains('dark');
 
   constructor() {
     this.prefersDark.addEventListener('change', (e) => console.log(e));
   }
 
-  toggleDarkTheme(shouldAdd: boolean) {
+  toggleDarkTheme(shouldAdd?: boolean) {
     document.body.classList.toggle('dark', shouldAdd);
-    console.log('dark theme toggled');
+    // update the isDarkTheme variable
+    this.isDarkTheme = document.body.classList.contains('dark');
   }
 
 }
