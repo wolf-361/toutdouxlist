@@ -43,6 +43,13 @@
             </ion-menu-toggle>
           </ion-buttons>
           <ion-title>Header</ion-title>
+          <ion-item slot="end">
+            <ion-icon slot="start" name="moon"></ion-icon>
+            <ion-label>
+              Toggle Dark Theme
+            </ion-label>
+            <ion-toggle id="themeToggle" slot="end" [checked]="toggleDarkTheme(true)"></ion-toggle>
+          </ion-item>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
