@@ -43,19 +43,12 @@
             </ion-menu-toggle>
           </ion-buttons>
           <ion-title>Header</ion-title>
-          <ion-item slot="end">
-            <div *ngIf="isDarkTheme; else dark">
-              <button ion-button icon-only (click)="toggleDarkTheme()">
-                <ion-icon name="sunny"></ion-icon>
-              </button>
-            </div>
-            <ng-template #dark>
-              <button ion-button icon-only (click)="toggleDarkTheme()">
-                <ion-icon name="moon"></ion-icon>
-              </button>
-            </ng-template>
-            <ion-toggle id="themeToggle" slot="end" checked="toggleDarkTheme(false)"></ion-toggle>
-          </ion-item>
+          <ion-button slot="end" (click)="toggleDarkTheme()" >
+            <ion-icon slot="icon-only" name="sunny" *ngIf="isDarkTheme; else moon"></ion-icon>
+          </ion-button>
+          <ng-template #moon>
+            <ion-icon slot="icon-only" name="moon"></ion-icon>
+          </ng-template>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
