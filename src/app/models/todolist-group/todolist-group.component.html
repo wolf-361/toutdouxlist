@@ -1,0 +1,16 @@
+<ion-accordion-group>
+  <ion-accordion *ngFor="let todo of todoGroup">
+    <ion-item slot="header" color="primary">
+      <ion-label>{{todo.title}}</ion-label>
+    </ion-item>
+    <ion-list slot="content" lines="full">
+      <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+        <ion-item *ngFor="let task of todo.tasks">
+          <ion-checkbox slot="start" [checked]="task.done" color="tertiary"></ion-checkbox>
+          <ion-label>{{task.name}}</ion-label>
+          <ion-reorder slot="end"></ion-reorder>
+        </ion-item>
+      </ion-reorder-group>
+    </ion-list>
+  </ion-accordion>
+</ion-accordion-group>
