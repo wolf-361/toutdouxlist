@@ -36,7 +36,11 @@ export class TodolistGroupComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // On ouvre les accordéons qui sont marqués comme ouverts
+
+    // On mark les tâches qui sont marquées comme faites
+  }
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     // The `from` and `to` properties contain the index of the item

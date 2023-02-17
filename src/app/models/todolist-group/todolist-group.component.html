@@ -1,8 +1,9 @@
 <ion-accordion-group>
-  <ion-accordion *ngFor="let todo of todoGroup">
-    <ion-item slot="header" color="primary">
-      <ion-label>{{todo.title}}</ion-label>
+  <ion-accordion *ngFor="let todo of todoGroup" [value]="todo.id">
+    <ion-item slot="header" lines="none">
+      <ion-label>{{todo.title}}</ion-label>      
     </ion-item>
+    
     <ion-list slot="content" lines="full">
       <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
         <ion-item *ngFor="let task of todo.tasks">
