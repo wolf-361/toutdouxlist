@@ -1,40 +1,97 @@
 <ion-app>
   <ion-split-pane when="sm" contentId="main-content">
-    <ion-menu contentId="main-content">
+    <ion-menu contentId="main-content" class="w-1/5">
       <ion-header>
-        <ion-toolbar color="primary">
-          <ion-title>Menu</ion-title>
+        <ion-toolbar color="primary" class="h-16">
+          <ion-title class="ion-title">ToutDouxList</ion-title>
+          <img slot="end" src="../assets/icons/sheep/icons8-lamb-80.png" alt="sheep" class="m-2 w-12 h-12"/>
         </ion-toolbar>
       </ion-header>
 
       <ion-content>
-        <ion-list>
-          <ion-list-header>
-            Navigate
-          </ion-list-header>
-          <ion-menu-toggle [autoHide]="false">
-            <ion-item button>
-              <ion-icon slot="start" name='home'></ion-icon>
+        <ion-list lines="none" class="h-full">
+          <div id="pages">
+            <ion-list-header>
+              Menu              
+            </ion-list-header>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='home'></ion-icon>
+                <ion-label>
+                  Home
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>
+          <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700">
+          <div id="labels">
+            <ion-list-header>
               <ion-label>
-                Home
+                Labels
               </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-          <ion-menu-toggle [autoHide]="false">
-            <ion-item button>
-              <ion-icon slot="start" name='information-circle'></ion-icon>
-              <ion-label>
-                About
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
+              <ion-button fill="clear" size="small">
+                <ion-label>Edit</ion-label>
+              </ion-button>
+            </ion-list-header>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='pricetag'></ion-icon>
+                <ion-label>
+                  Labels for loop
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='add'></ion-icon>
+                <ion-label>
+                  Create a new label
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>
+          <hr class="h-px my-1 bg-gray-200 border-0 dark:bg-gray-700">
+          <div class="settings">
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='settings'></ion-icon>
+                <ion-label>
+                  Settings
+                </ion-label>
+              </ion-item> 
+            </ion-menu-toggle>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='trash-outline'></ion-icon>
+                <ion-label>
+                  Trash
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='settings-outline'></ion-icon>
+                <ion-label>
+                  Settings
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+            <ion-menu-toggle [autoHide]="false">
+              <ion-item button>
+                <ion-icon slot="start" name='information-circle'></ion-icon>
+                <ion-label>
+                  Help & Feedback
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </div>                       
         </ion-list>
       </ion-content>
     </ion-menu>
 
     <div class="ion-page" id="main-content">
       <ion-header>
-        <ion-toolbar>
+        <ion-toolbar class="h-16">
           <ion-buttons slot="start">
             <ion-menu-toggle>
               <ion-button>
@@ -43,7 +100,7 @@
             </ion-menu-toggle>
           </ion-buttons>
           <ion-title>Header</ion-title>
-          <ion-button slot="end" (click)="toggleDarkTheme()" >
+          <ion-button slot="end" (click)="toggleDarkTheme()">
             <ion-icon slot="icon-only" name="sunny" *ngIf="isDarkTheme; else moon"></ion-icon>
           </ion-button>
           <ng-template #moon>
@@ -58,4 +115,3 @@
 
   </ion-split-pane>
 </ion-app>
-
